@@ -7,7 +7,7 @@ const ChatItem = ({userName, userAvatar, userOnline, messageTime, userMessage }:
     <div className="chatList" 
          onClick = {() => setActiveUser({ userName, userAvatar, userOnline, messageTime, userMessage })}>
       <div className="chatItem">
-        <img src = {userAvatar} className='avatar' alt={userName} />
+        <img src = {userAvatar} className='avatar'/>
         <div className="userInfo">
           <div className="chatTop">
             <span className="userName">{userName}</span>

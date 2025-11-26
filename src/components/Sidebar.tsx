@@ -37,7 +37,7 @@ export const Sidebar = () => {
       <div className="buttons">
         <button className="navBtn">All</button>
         <button className="navBtn">Groups</button>
-        <button className="navBtn">All</button>
+        <button className="navBtn">Personal</button>
       </div>
 
       <ChatList />

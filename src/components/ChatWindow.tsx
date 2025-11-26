@@ -1,12 +1,17 @@
 import { useMessageStore } from '../store/messageStore';
 import Message from './Message';
 import { useChat } from '../hooks/useChat';
-import { useCallback } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import styles from './ChatWindow.module.css';
 
 export const ChatWindow = () => {
   const { activeUser, sendMessage } = useChat();
   const messages = useMessageStore(s => s.messages);
+  
+  const messagesToBottom = useRef<HTMLDivElement>(null);
+  const scrollToBottom = () => {
+    messagesToBottom.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const onKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -19,12 +24,17 @@ export const ChatWindow = () => {
   }, 
   [sendMessage]);
 
+
+  useEffect(()=>{
+    scrollToBottom()
+  }, [messages,activeUser]);
+
   if (!activeUser) {
     return (
       <div className={styles.cardsContainer}>
         <div className={styles.mainCard}>
           <div className={styles.messages}>
-            <p> Select User</p>
+            <p> Select User </p>
           </div>
         </div>
       </div>
@@ -43,6 +53,10 @@ export const ChatWindow = () => {
               <Message key={i} text={m.text} sent={m.sent} />
             ))}
             <div className={styles.gradientCircle}></div>
+                        
+                        
+            <div ref={messagesToBottom}></div>
+
           </div>
         </div>
 

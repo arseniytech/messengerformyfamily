@@ -19,7 +19,7 @@ const SettingsPage = () => {
                 <span className="userName">Settings</span>
                 <span className="chatTime"></span>
               </div>
-              <div className="chatMessage">ну настраивай</div>
+              <div className="chatMessage"> настраивай</div>
             </div>
           </div>
         </div>
