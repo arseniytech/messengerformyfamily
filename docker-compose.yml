@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: messenger-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: messenger_user
+      POSTGRES_PASSWORD: messenger_password
+      POSTGRES_DB: messenger
+    ports:
+      - "5432:5432"
+    volumes:
+      - messenger_db_data:/var/lib/postgresql/data
+
+volumes:
+  messenger_db_data:
