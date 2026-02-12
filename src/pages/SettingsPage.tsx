@@ -1,41 +1,54 @@
-import { Link } from 'react-router-dom';
-import SettingsIcon from '../assets/Settings.svg';
-import PhoneIcon from '../assets/Phone.svg';
-import ChatMessageIcon from '../assets/Chat Message.svg';
+import { Link, useLocation } from 'react-router-dom';
 import { ChatWindow } from '../components/ChatWindow';
 
 const SettingsPage = () => {
+  const location = useLocation();
+  const isActive = (path: string) => location.pathname === path;
+
   return (
     <div className="mainBlock">
       <div className="navigation">
+        <div id="timeDisplay"></div>
+
         <div className="messageTitle">
-          <img src={SettingsIcon} alt="Settings" />
+          <span style={{ fontSize: 18, fontWeight: 600 }}>Settings</span>
         </div>
 
         <div className="chatContainer">
-          <div className="chatItem" style={{cursor: 'default'}}>
-            <div className="userInfo" style={{width: '100%'}}>
+          <div className="chatItem" style={{ cursor: 'default' }}>
+            <div className="userInfo" style={{ width: '100%' }}>
               <div className="chatTop">
-                <span className="userName">Settings</span>
-                <span className="chatTime"></span>
+                <span className="userName">Profile & Settings</span>
               </div>
-              <div className="chatMessage"> настраивай</div>
+              <div className="chatMessage">Настройки аккаунта появятся здесь</div>
             </div>
           </div>
         </div>
 
         <div className="btnsContainer">
           <div className="btns">
-            <Link to="/calls" className="bottomBtn" aria-label="Go to Calls">
-              <img src={PhoneIcon} alt="phone" />
+            <Link
+              to="/calls"
+              className="bottomBtn"
+              aria-label="Go to Calls"
+              style={isActive('/calls') ? { color: '#007aff' } : undefined}
+            >
               <span>Calls</span>
             </Link>
-            <Link to="/" className="bottomBtn" aria-label="Go to Chats">
-              <img src={ChatMessageIcon} alt="chat" />
+            <Link
+              to="/"
+              className="bottomBtn"
+              aria-label="Go to Chats"
+              style={isActive('/') ? { color: '#007aff' } : undefined}
+            >
               <span>Chats</span>
             </Link>
-            <Link to="/settings" className="bottomBtn" aria-label="Go to Settings">
-              <img src={SettingsIcon} alt="settings" />
+            <Link
+              to="/settings"
+              className="bottomBtn"
+              aria-label="Go to Settings"
+              style={isActive('/settings') ? { color: '#007aff' } : undefined}
+            >
               <span>Settings</span>
             </Link>
           </div>
@@ -48,5 +61,3 @@ const SettingsPage = () => {
 };
 
 export default SettingsPage;
-
-

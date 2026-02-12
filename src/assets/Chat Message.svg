@@ -1,9 +1,0 @@
-<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect width="50" height="50" fill="url(#pattern0_85_6)"/>
-<defs>
-<pattern id="pattern0_85_6" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_85_6" transform="scale(0.02)"/>
-</pattern>
-<image id="image0_85_6" width="50" height="50" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACSUlEQVR4nO2au2tUQRTGf9r5bsVHfICIiJ2Fj92/IYpa2YuChQpiIwo2KgoW/gdhNSGJAUVBBS18IIr4QkQRy4gWFmIwipojA6eQOPfembuZ2bNhf/BBWHbPfh/zyMy5Cz16mGcFsAc4C1wBngMfgM8q9/czYFTfsxtYjhHWAieBl4DU1AvgBLC6EwG2AdeBP20EmC5X6xqwJUeANcDVGTTv0xQwBqxKFeIgMJE4hPyjb8CBmQwwH7icMYBMU0s9tMUS4EEHQ4jqPrC4bogFwBMDIUT1qM7IzM2wqOtoTL0Fc8yAaSnQkdAQG4GfBgxLgX4AG0KC3DRgVirk/hmXst2ASQnU1rIgQ4FF3BElFY1AD5eKCiyKWBtu5FLRDPQwCSz0FdhlYLpIpHb4glwwYEwidd4X5LYBYxIpt8P+x1sDxiRSb3xBPmbYpRo1ajdKfI37PjCeYZdq1qjdjA3y2sBUkUg5z7N3sZ8xYEwidc4XZKcBYxKp/qIb4UQXnbUm1bOXwS46a7XKimw2MF0kUJWNvBsGTEqFXEeyknXAdwNmpWRtrA+dp0cNGJYCHSKCOdr+F2MaVW9RuGbYYwPmRfUQmEdN3FXyjoEQ99ppmVppYg+0MxI+9uuzi1wBvgL7SMCyTAGmgBFgJYnYmzjAb21Su9NFUlJtx0+B40AfGXBf8qvC0BddR6d0arhnK++0F/BJH0+714aB03ptWEpmLlaEeK9dfNNsqhiNgaLWpTXuFuwst/QS1DW0tO3ySuf+4U79SqFHD/LzF0AJLnbrYCGKAAAAAElFTkSuQmCC"/>
-</defs>
-</svg>

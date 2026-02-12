@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { useMessageStore, type User } from '../store/messageStore';
+import { useAuthStore } from '../store/authStore';
 
 const ChatItem = ({
+  id,
   userName,
   userAvatar,
   userOnline,
@@ -15,6 +17,7 @@ const ChatItem = ({
       className="chatList"
       onClick={() =>
         setActiveUser({
+          id,
           userName,
           userAvatar,
           userOnline,
@@ -39,20 +42,30 @@ const ChatItem = ({
 export const ChatList = () => {
   const contacts = useMessageStore((s) => s.contacts);
   const setContacts = useMessageStore((s) => s.setContacts);
+  const token = useAuthStore((s) => s.token);
 
   useEffect(() => {
     const loadContacts = async () => {
+      if (!token) return;
       try {
-        const response = await fetch('http://localhost:4000/contacts');
+        const response = await fetch('http://localhost:4000/contacts', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (!response.ok) {
+          console.error('Failed to load contacts', await response.text());
+          return;
+        }
         const data = await response.json();
 
-        // Map API data into your `User` shape
         const users: User[] = data.map((row: any) => ({
-          userName: row.username,
-          userMessage: '', // we don't store this in DB yet
+          id: row.id,
+          userName: row.display_name || row.username,
+          userMessage: '',
           userAvatar: row.avatar_url,
           userOnline: row.is_online,
-          messageTime: '', // could come from last message later
+          messageTime: '',
           lastMessage: '',
         }));
 
@@ -63,7 +76,7 @@ export const ChatList = () => {
     };
 
     loadContacts();
-  }, [setContacts]);
+  }, [setContacts, token]);
 
   return (
     <div className="chatContainer">
