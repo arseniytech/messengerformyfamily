@@ -3,6 +3,10 @@
 A  messenger built for family as a reliable alternative when major messengers became unstable — phone/PIN auth, text/media/groups, minimalist iMessage-inspired design.  
 Мессенджер для семьи как надёжная альтернатива нестабильным крупным мессенджерам — авторизация по телефону/ПИН, текст/медиа/группы, минималистичный дизайн в стиле iMessage.
 
+A private messenger built for my family as a reliable alternative when major messengers became unstable — phone/PIN auth, text/media/groups, minimalist iMessage-inspired design.  
+Приватный мессенджер для моей семьи как надёжная альтернатива нестабильным крупным мессенджерам — авторизация по телефону/ПИН, текст/медиа/группы, минималистичный дизайн в стиле iMessage.
+
+
 ## Tech stack / Технологии
 
 - **React 19 + TypeScript**  
@@ -214,4 +218,5 @@ messenger_rodstveniki/
 ---
 
 **Author / Автор:** Arseniy  
+
 **Built with ❤️ for family / Сделано с ❤️ для семьи**
